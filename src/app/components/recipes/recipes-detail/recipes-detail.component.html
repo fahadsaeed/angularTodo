@@ -21,7 +21,7 @@
         </button>
         <ul class="dropdown-menu" aria-labelledby="ManageRecipeButton">
           <li><a role="button" (click)="onAddToShoppingList()">To Shopping List</a></li>
-          <li><a role="button" >Edit Recipe</a></li>
+          <li><a role="button" [routerLink]="['/recipes', id, 'edit']">Edit Recipe</a></li>
           <li><a role="button" >Delete Recipe</a></li>
         </ul>
       </div>
