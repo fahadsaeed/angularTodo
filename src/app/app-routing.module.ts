@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { RecipesComponent } from './components/recipes/recipes.component';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
+import {RecipesComponent } from './components/recipes/recipes.component';
+import {ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import {RecipeStartComponent} from './components/recipes/recipe-start/recipe-start.component';
 import {RecipesDetailComponent} from './components/recipes/recipes-detail/recipes-detail.component';
 import {RecipeFormComponent} from './components/recipes/recipe-form/recipe-form.component';

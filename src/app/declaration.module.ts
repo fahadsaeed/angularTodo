@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+
 import {Router} from '@angular/router';
 import { DropdownDirective } from './shared/dropdown.directive';
 
@@ -26,7 +29,7 @@ const components  =  [
 @NgModule({
   declarations: components,
   exports : components,
-  imports : [CommonModule, AppRoutingModule]
+  imports : [CommonModule, FormsModule, AppRoutingModule]
 })
 
 export class DeclarationsModule { }

@@ -1,6 +1,7 @@
 import {EventEmitter} from '@angular/core';
 import {Recipe} from './recipe.model';
 import {Ingredient} from './../../shared/ingredient.model';
+import {Subject} from 'rxjs';
 
 export class RecipesService {
 
@@ -23,14 +24,37 @@ export class RecipesService {
 
   ];
 
-  selectedRecipe = new EventEmitter<Recipe>();
+  // selectedRecipe = new EventEmitter<Recipe>();
+  changedRecipe = new Subject<Recipe[]>();
 
   getRecipes() {
     return this.recipes.slice();
+    // return [{
+    //   name: 'aaaa',
+    //   pathImage : 'aaaaaaaa',
+    //   description: 'aaaaaaaaaaaaa',
+    //   ingreidents : []
+    // }];
   }
 
   getRecipe(index: number) {
     return this.recipes.slice()[index];
   }
+
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    this.changedRecipe.next(this.recipes.slice());
+  }
+
+  editRecipe(index: number, recipe: Recipe) {
+    this.recipes[index] =  recipe;
+    this.changedRecipe.next(this.recipes.slice());
+  }
+
+  deleteRecipe(index: number) {
+    this.recipes.splice(index, 1);
+    this.changedRecipe.next(this.recipes.slice());
+  }
+
 
 }
