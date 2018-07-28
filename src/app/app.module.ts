@@ -9,6 +9,10 @@ import { RecipeStartComponent } from './components/recipes/recipe-start/recipe-s
 import { RecipeFormComponent } from './components/recipes/recipe-form/recipe-form.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RecipesService} from './components/recipes/recipes.service';
+import {DataStorageService} from './shared/data-storage.service';
+import {HttpClientModule} from '@angular/common/http';
+import {AuthService} from './auth/auth.service';
+import {AuthGuardService} from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,10 @@ import {RecipesService} from './components/recipes/recipes.service';
     DeclarationsModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [ShoppingListService, RecipesService],
+  providers: [ShoppingListService, RecipesService, DataStorageService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

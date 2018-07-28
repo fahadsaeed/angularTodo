@@ -27,14 +27,13 @@ export class RecipesService {
   // selectedRecipe = new EventEmitter<Recipe>();
   changedRecipe = new Subject<Recipe[]>();
 
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.changedRecipe.next(this.recipes.slice());
+  }
+
   getRecipes() {
     return this.recipes.slice();
-    // return [{
-    //   name: 'aaaa',
-    //   pathImage : 'aaaaaaaa',
-    //   description: 'aaaaaaaaaaaaa',
-    //   ingreidents : []
-    // }];
   }
 
   getRecipe(index: number) {

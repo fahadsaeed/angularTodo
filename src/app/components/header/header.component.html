@@ -16,15 +16,32 @@
       </li>
     </ul>
 
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Save Data</a>
-        <a class="dropdown-item" href="#">Fetch Data</a>
+    <div class="row mr-5">
+      <ul class="navbar-nav mr-2">
+        <ng-template [ngIf]="!auth.isAuthenticated()">
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="'/register'">Register</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link"  routerLink="/login">Login</a>
+          </li>
+        </ng-template>
+
+        <li class="nav-item" *ngIf="auth.isAuthenticated()">
+          <a class="nav-link" (click)="logout()">logout</a>
+        </li>
+      </ul>
+
+      <div class="dropdown" *ngIf="auth.isAuthenticated()">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="onSave()">Save Data</a>
+          <a class="dropdown-item" (click)="onFetch()">Fetch Data</a>
+        </div>
       </div>
     </div>
-
   </div>
 </nav>

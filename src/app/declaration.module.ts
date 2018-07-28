@@ -16,8 +16,14 @@ import { RecipesDetailComponent } from './components/recipes/recipes-detail/reci
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/shopping-edit.component';
 import {AppRoutingModule} from './app-routing.module';
+import {SigninComponent} from './auth/signin/signin.component';
+import {SignupComponent} from './auth/signup/signup.component';
+
+
 
 const components  =  [
+  SigninComponent,
+  SignupComponent,
   HeaderComponent,
   RecipesComponent,
   RecipeListComponent,
