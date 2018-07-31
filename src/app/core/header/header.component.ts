@@ -15,7 +15,7 @@ export class HeaderComponent {
   //   this.featureSelected.emit(feature);
   // }
 
-  constructor(private dataStorage: DataStorageService, private auth: AuthService) {}
+  constructor(private dataStorage: DataStorageService, public auth: AuthService) {}
 
   onSave() {
     this.dataStorage.storeRecipe().subscribe(

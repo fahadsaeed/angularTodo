@@ -9,7 +9,7 @@ import {RecipeFormComponent} from './recipe-form/recipe-form.component';
 
 
 const recipeRoute: Routes = [
-  { path: 'recipes', component: RecipesComponent,
+  { path: '', component: RecipesComponent,
     children: [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeFormComponent, canActivate: [AuthGuardService] },
@@ -20,6 +20,9 @@ const recipeRoute: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(recipeRoute)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    AuthGuardService
+  ]
 })
 export class RecipesRoutingModule {}

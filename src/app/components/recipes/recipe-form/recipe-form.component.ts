@@ -98,4 +98,8 @@ export class RecipeFormComponent implements OnInit {
     (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
   }
 
+  getIngredientField() {
+    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+  }
+
 }
