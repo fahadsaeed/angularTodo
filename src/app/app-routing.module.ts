@@ -6,9 +6,9 @@ import {HomeComponent} from './core/home/home.component';
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent,  data : {title : 'Home'}},
   { path: 'recipes',  loadChildren: './components/recipes/recipes.module#RecipesModule'},
-  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'shopping-list', component: ShoppingListComponent ,  data: {title : 'Shopping List'} },
 ];
 
 @NgModule({

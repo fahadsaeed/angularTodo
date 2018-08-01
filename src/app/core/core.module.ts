@@ -9,6 +9,7 @@ import {AuthService} from '../auth/auth.service';
 import {ShoppingListService} from '../components/shopping-list/shopping-list.service';
 import {DataStorageService} from '../shared/data-storage.service';
 import {RecipesService} from '../components/recipes/recipes.service';
+import {PageTitleService} from './page-title.service';
 
 
 
@@ -29,7 +30,8 @@ import {RecipesService} from '../components/recipes/recipes.service';
     ShoppingListService,
     RecipesService,
     DataStorageService,
-    AuthService]
+    AuthService,
+    PageTitleService]
 })
 export class CoreModule {}
 

@@ -12,9 +12,9 @@ const recipeRoute: Routes = [
   { path: '', component: RecipesComponent,
     children: [
       { path: '', component: RecipeStartComponent },
-      { path: 'new', component: RecipeFormComponent, canActivate: [AuthGuardService] },
-      { path: ':id', component: RecipesDetailComponent },
-      { path: ':id/edit', component: RecipeFormComponent,  canActivate: [AuthGuardService] },
+      { path: 'new', component: RecipeFormComponent, canActivate: [AuthGuardService], data : {title : 'Add Recipe'} },
+      { path: ':id', component: RecipesDetailComponent, data : {title : 'Recipe Details'}  },
+      { path: ':id/edit', component: RecipeFormComponent,  canActivate: [AuthGuardService], data : {title : 'Edit Recipe'}  },
     ]}
 ];
 
