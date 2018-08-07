@@ -1,47 +1,56 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/">Recipe Book</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<header class="bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+          <a class="navbar-brand" routerLink="/">Recipe Book</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" routerLinkActive="active">
-        <!--<a class="nav-link" (click)="onSelect('recipes')">Recipes</a>-->
-        <a class="nav-link" [routerLink]="'/recipes'">Recipes</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link"  routerLink="/shopping-list">Shopping List</a>
-        <!--<a class="nav-link" (click)="onSelect('shopping')">Shopping List</a>-->
-      </li>
-    </ul>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item" routerLinkActive="active">
+                <!--<a class="nav-link" (click)="onSelect('recipes')">Recipes</a>-->
+                <a class="nav-link" [routerLink]="'/recipes'">Recipes</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link"  routerLink="/shopping-list">Shopping List</a>
+                <!--<a class="nav-link" (click)="onSelect('shopping')">Shopping List</a>-->
+              </li>
+            </ul>
 
-    <div class="row mr-5">
-      <ul class="navbar-nav mr-2">
-        <ng-template [ngIf]="!auth.isAuthenticated()">
+            <div class="row mr-5">
+              <ul class="navbar-nav mr-2">
+                <ng-template [ngIf]="!auth.isAuthenticated()">
 
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" [routerLink]="'/register'">Register</a>
-          </li>
-          <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link"  routerLink="/login">Login</a>
-          </li>
-        </ng-template>
+                  <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="'/register'">Register</a>
+                  </li>
+                  <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link"  routerLink="/login">Login</a>
+                  </li>
+                </ng-template>
 
-        <li class="nav-item" *ngIf="auth.isAuthenticated()">
-          <a class="nav-link" (click)="logout()">logout</a>
-        </li>
-      </ul>
+                <li class="nav-item" *ngIf="auth.isAuthenticated()">
+                  <a class="nav-link" (click)="logout()">logout</a>
+                </li>
+              </ul>
 
-      <div class="dropdown" *ngIf="auth.isAuthenticated()">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" (click)="onSave()">Save Data</a>
-          <a class="dropdown-item" (click)="onFetch()">Fetch Data</a>
-        </div>
+              <div class="dropdown" *ngIf="auth.isAuthenticated()">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" (click)="onSave()">Save Data</a>
+                  <a class="dropdown-item" (click)="onFetch()">Fetch Data</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
   </div>
-</nav>
+</header>
+
